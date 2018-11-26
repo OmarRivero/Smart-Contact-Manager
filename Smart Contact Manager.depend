@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1543124966 source:c:\users\imanol\documents\proyectos en c\smart contact manager\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<w32api.h>
+	"resources.h"
+	"estructuras.h"
+
+1543088295 c:\users\imanol\documents\proyectos en c\smart contact manager\resources.h
+
+1543117012 c:\users\imanol\documents\proyectos en c\smart contact manager\estructuras.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
