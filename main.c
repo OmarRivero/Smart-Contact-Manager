@@ -5,7 +5,10 @@
 #include "resources.h"
 #include "estructuras.h"
 
-#define FILE_MEN_NEW 1
+#define FILE_MENU_AGREGAR 1
+#define FILE_MENU_BUSCAR 2
+#define FILE_MENU_VER 3
+#define MENU_SALIR 4
 
 //La clase ventana no tiene que ver con c++
 const char g_szClassName[] = "MyWindowClass";
@@ -20,8 +23,17 @@ LRESULT CALLBACK Wnd1(HWND hwnd1, UINT msg, WPARAM wParam, LPARAM lParam){
     switch(msg){
         case WM_COMMAND:
             switch(wParam){
-                case 1:
+                case FILE_MENU_AGREGAR:
                     MessageBeep(MB_OK);
+                    break;
+                case FILE_MENU_BUSCAR:
+                    MessageBeep(MB_OK);
+                    break;
+                case FILE_MENU_VER:
+                    MessageBeep(MB_OK);
+                    break;
+                case MENU_SALIR:
+                    DestroyWindow(hwnd1);
                     break;
             }
             break;
@@ -94,6 +106,12 @@ void AddMenus(HWND hwnd1){
     hMenu = CreateMenu();
     HMENU hFileMenu = CreateMenu();
 
+    AppendMenu(hFileMenu, MF_STRING, FILE_MENU_AGREGAR, "Agregar contactos");
+    AppendMenu(hFileMenu, MF_STRING, FILE_MENU_BUSCAR, "Buscar contactos");
+    AppendMenu(hFileMenu, MF_SEPARATOR, NULL, NULL);
+    AppendMenu(hFileMenu, MF_STRING, FILE_MENU_VER, "Ver todos los contactos");
+
     AppendMenu(hMenu, MF_POPUP, (UINT_PTR)hFileMenu, "Opciones");
+    AppendMenu(hMenu, MF_STRING, MENU_SALIR,"Salir");
     SetMenu(hwnd1, hMenu);
 }
